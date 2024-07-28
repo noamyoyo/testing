@@ -1,0 +1,15 @@
+name: Webhook Trigger
+
+on:
+  workflow_dispatch:
+
+jobs:
+  print-webhook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Print Webhook Payload
+        run: |
+          echo "Webhook payload: ${{ github.event.inputs.payload }}"
